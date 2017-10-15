@@ -2,40 +2,25 @@ package parser;
 
 import java.io.*;
 import java.nio.file.*;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Андрей on 15.10.2017.
  */
-public class ParserFromFile {
+public interface ParserFromFile {
 
     /**
-     * @throws FileNotFoundException
+     *
+     * @param pathToFile
+     * @return
+     * @throws IOException
      */
-    public static List<String> getData() throws FileNotFoundException {
+    static List<String> getData(String pathToFile) throws IOException {
 
-        List<String> dataSet = new ArrayList<>();
+        Path path = Paths.get(pathToFile);
+        List<String> dataSet = Files.readAllLines(path);
 
-        Path path = Paths.get("C:/TestProjects/testIgnite/callstorage/testData.csv");
-        if (Files.isReadable(path)) {
-
-            System.out.println("Успешно прочитал файл))");
-            try {
-                List<String> listData = Files.readAllLines(path);
-
-                for (String line : listData) {
-                 //   System.out.println(line);
-                    dataSet.add(line);
-
-                }
-            } catch (IOException ex) {
-                System.out.println(ex);
-            }
-
-        } else {
-            System.out.println("Файл нечитаемый");
-        }
+        System.out.println(dataSet);
         return dataSet;
     }
 }

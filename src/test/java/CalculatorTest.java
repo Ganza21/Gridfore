@@ -11,7 +11,7 @@ public class CalculatorTest {
     private Calculator calculator;
 
     @Before
-    public void firstTest(){
+    public void prepare(){
         calculator = new Calculator();
     }
 

@@ -1,3 +1,4 @@
+import Ignite.SuperTraher;
 import parser.ParserData;
 import parser.ParserFromFile;
 
@@ -10,7 +11,9 @@ public class Main {
 
        // System.out.println("Hello Gradle!");
 
-        ParserData.splitData();
+//        ParserData.splitData();
+
+        SuperTraher.run(args[0]);
 
     }
 

@@ -1,22 +1,24 @@
 package parser;
 
-import java.io.IOException;
+import model.CallDetail;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Андрей on 15.10.2017.
  */
-public class ParserData {
+public interface ParserData {
 
-    public static void splitData() {
+    static List<CallDetail> splitDataToObject(List<String> dataList){
 
-        try {
-            for (String line : ParserFromFile.getData()) {
-                System.out.println(line);
+        List<CallDetail> callList = new ArrayList<>();
 
+            for (String line : dataList) {
 
+                callList.add(new CallDetail(line));
             }
-        } catch (IOException exep) {
-            System.out.println(exep);
-        }
+
+            return callList;
     }
 }
