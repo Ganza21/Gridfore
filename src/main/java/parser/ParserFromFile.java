@@ -2,6 +2,7 @@ package parser;
 
 import java.io.*;
 import java.nio.file.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,7 +13,9 @@ public class ParserFromFile {
     /**
      * @throws FileNotFoundException
      */
-    public static void getData() throws FileNotFoundException {
+    public static List<String> getData() throws FileNotFoundException {
+
+        List<String> dataSet = new ArrayList<>();
 
         Path path = Paths.get("C:/TestProjects/testIgnite/callstorage/testData.csv");
         if (Files.isReadable(path)) {
@@ -22,7 +25,9 @@ public class ParserFromFile {
                 List<String> listData = Files.readAllLines(path);
 
                 for (String line : listData) {
-                    System.out.println(line);
+                 //   System.out.println(line);
+                    dataSet.add(line);
+
                 }
             } catch (IOException ex) {
                 System.out.println(ex);
@@ -31,6 +36,7 @@ public class ParserFromFile {
         } else {
             System.out.println("Файл нечитаемый");
         }
+        return dataSet;
     }
 }
 

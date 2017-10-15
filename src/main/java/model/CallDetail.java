@@ -11,7 +11,7 @@ import java.util.Date;
  */
 @Getter
 @Builder
-public class Model {
+public class CallDetail {
 
     private final Integer number;
     private final Date date;
@@ -20,7 +20,7 @@ public class Model {
     private final String calledNum;
     private final BigDecimal charge;
 
-    public Model(Integer number, Date date, Integer tranz, Integer volume, String calledNum, BigDecimal charge) {
+    public CallDetail(Integer number, Date date, Integer tranz, Integer volume, String calledNum, BigDecimal charge) {
         this.number = number;
         this.date = date;
         this.tranz = tranz;

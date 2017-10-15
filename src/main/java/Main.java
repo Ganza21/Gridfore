@@ -1,3 +1,4 @@
+import parser.ParserData;
 import parser.ParserFromFile;
 
 /**
@@ -7,9 +8,9 @@ public class Main {
 
     public static void main(String[] args) throws Throwable{
 
-        System.out.println("Hello Gradle!");
+       // System.out.println("Hello Gradle!");
 
-        ParserFromFile.getData();
+        ParserData.splitData();
 
     }
 
