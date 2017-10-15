@@ -10,23 +10,27 @@ import java.util.List;
 public class ParserFromFile {
 
     /**
-     *
      * @throws FileNotFoundException
      */
     public static void getData() throws FileNotFoundException {
 
         Path path = Paths.get("C:/TestProjects/testIgnite/callstorage/testData.csv");
+        if (Files.isReadable(path)) {
 
-        try {
-            List<String> listData = Files.readAllLines(path);
+            System.out.println("Успешно прочитал файл))");
+            try {
+                List<String> listData = Files.readAllLines(path);
 
-            for (String line : listData) {
-                System.out.println(line);
+                for (String line : listData) {
+                    System.out.println(line);
+                }
+            } catch (IOException ex) {
+                System.out.println(ex);
             }
-        } catch (IOException ex){
-            System.out.println(ex);
-        }
 
+        } else {
+            System.out.println("Файл нечитаемый");
+        }
     }
 }
 
