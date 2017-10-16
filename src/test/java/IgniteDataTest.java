@@ -6,7 +6,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -31,10 +30,18 @@ public class IgniteDataTest {
         igniteData.closeIgnite();
     }
 
+    // TODO: fix bag (different types)in test {java.lang.AssertionError: Expected :[[1081]] Actual   :[1081]}
+
     @Test
     public void getSumVolumeFromCacheTest() throws FileNotFoundException {
         List<?> list1 = Arrays.asList(1081);
-      //  List<?> list2 = Arrays.asList(list1);
-        Assert.(igniteData.getSumVolumeFromCache().toArray(), list1.toArray());
+        Assert.assertEquals(igniteData.getSumVolumeFromCache(), list1);
+    }
+
+    // Same problem (of course) Expected :[[2]]  Actual   :[2]
+    @Test
+    public void getCountEntryFromCacheTest() throws FileNotFoundException{
+        List<?> list1 = Arrays.asList(2);
+        Assert.assertEquals(igniteData.getCountEntryFromCache(), list1);
     }
 }
