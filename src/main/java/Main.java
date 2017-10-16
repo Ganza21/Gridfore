@@ -13,7 +13,7 @@ public class Main {
 
 //        ParserData.splitData();
 
-        SuperTraher.run(args[0]);
+        SuperTraher.run(args[0], args[1]);
 
     }
 

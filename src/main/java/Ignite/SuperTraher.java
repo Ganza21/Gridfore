@@ -10,11 +10,15 @@ import java.io.IOException;
  */
 public class SuperTraher {
 
-    public static void run(String pathToFile) throws IOException {
+    public static void run(String pathToFile, String pathToOutFile) throws IOException {
 
        IgniteData igniteData = new IgniteData();
 
        igniteData.putDataToCache(ParserData.splitDataToObject(ParserFromFile.getData(pathToFile)));
+
+       igniteData.writeToFileSumVolume(igniteData.getSumVolumeFromCache(), pathToOutFile);
+
+       igniteData.closeIgnite();
 
     }
 }

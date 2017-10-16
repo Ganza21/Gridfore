@@ -1,6 +1,7 @@
 package model;
 
 import lombok.Getter;
+import org.apache.ignite.cache.query.annotations.QuerySqlField;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -13,12 +14,17 @@ import java.util.List;
  */
 @Getter
 public class CallDetail implements Serializable{
-
+    @QuerySqlField
     private String number;
+    @QuerySqlField
     private String date;
+    @QuerySqlField
     private Integer tranz;
+    @QuerySqlField
     private Integer volume;
+    @QuerySqlField
     private String calledNum;
+    @QuerySqlField
     private BigDecimal charge;
 
     public CallDetail(String data) {
