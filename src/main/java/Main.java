@@ -11,9 +11,7 @@ public class Main {
 
        // System.out.println("Hello Gradle!");
 
-//        ParserData.splitData();
-
-        SuperTraher.run(args[0], args[1]);
+        SuperTraher.run(args[0], args[1], args[2]);
 
     }
 
