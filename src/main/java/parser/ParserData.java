@@ -10,6 +10,11 @@ import java.util.List;
  */
 public interface ParserData {
 
+    /**
+     * Method of converting extracted data to an object
+     * @param dataList
+     * @return List<CallDetail> callList
+     */
     static List<CallDetail> splitDataToObject(List<String> dataList){
 
         List<CallDetail> callList = new ArrayList<>();

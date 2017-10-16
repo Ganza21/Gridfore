@@ -27,6 +27,10 @@ public class CallDetail implements Serializable{
     @QuerySqlField
     private BigDecimal charge;
 
+    /**
+     * Constructor to convert a List to an object
+     * @param data
+     */
     public CallDetail(String data) {
         List<String> listData = Arrays.asList(data.split(","));
         if (listData.size() == 6){

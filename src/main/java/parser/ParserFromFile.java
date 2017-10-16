@@ -10,9 +10,9 @@ import java.util.List;
 public interface ParserFromFile {
 
     /**
-     *
+     * The method reads data from a file
      * @param pathToFile
-     * @return
+     * @return List<String> dataSet
      * @throws IOException
      */
     static List<String> getData(String pathToFile) throws IOException {
