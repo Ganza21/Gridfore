@@ -20,7 +20,6 @@ public interface ParserFromFile {
         Path path = Paths.get(pathToFile);
         List<String> dataSet = Files.readAllLines(path);
 
-        System.out.println(dataSet);
         return dataSet;
     }
 }

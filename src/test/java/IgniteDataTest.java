@@ -35,13 +35,14 @@ public class IgniteDataTest {
     @Test
     public void getSumVolumeFromCacheTest() throws FileNotFoundException {
         List<?> list1 = Arrays.asList(1081);
-        Assert.assertEquals(igniteData.getSumVolumeFromCache(), list1);
+        Assert.assertEquals(list1, igniteData.getSumVolumeFromCache());
     }
 
     // Same problem (of course) Expected :[[2]]  Actual   :[2]
     @Test
     public void getCountEntryFromCacheTest() throws FileNotFoundException{
         List<?> list1 = Arrays.asList(2);
-        Assert.assertEquals(igniteData.getCountEntryFromCache(), list1);
+        Assert.assertEquals(list1, igniteData.getCountEntryFromCache());
+
     }
 }
