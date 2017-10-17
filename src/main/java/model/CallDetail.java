@@ -5,8 +5,9 @@ import org.apache.ignite.cache.query.annotations.QuerySqlField;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -17,7 +18,7 @@ public class CallDetail implements Serializable{
     @QuerySqlField
     private String number;
     @QuerySqlField
-    private String date;
+    private LocalDate date;
     @QuerySqlField
     private Integer tranz;
     @QuerySqlField
@@ -27,6 +28,8 @@ public class CallDetail implements Serializable{
     @QuerySqlField
     private BigDecimal charge;
 
+    public static final DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+
     /**
      * Constructor to convert a List to an object
      * @param data
@@ -35,11 +38,12 @@ public class CallDetail implements Serializable{
         List<String> listData = Arrays.asList(data.split(","));
         if (listData.size() == 6){
             number = listData.get(0);
-            date = listData.get(1);
+            date = LocalDate.parse(listData.get(1), FORMAT);
             tranz = Integer.valueOf(listData.get(2));
             volume = Integer.valueOf(listData.get(3));
             calledNum = listData.get(4);
             charge = new BigDecimal(listData.get(5));
+
         } else {
             System.out.println("Запись кривая");
         }
