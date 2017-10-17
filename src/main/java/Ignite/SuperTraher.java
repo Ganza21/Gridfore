@@ -21,13 +21,14 @@ public class SuperTraher {
 
        IgniteData igniteData = new IgniteData();
 
-       igniteData.putDataToCache(ParserData.splitDataToObject(ParserFromFile.getData(pathToFile)));
+       try {
+           igniteData.putDataToCache(ParserData.splitDataToObject(ParserFromFile.getData(pathToFile)));
 
-       igniteData.writeToFileSumVolume(igniteData.getSumVolumeFromCache(), pathToOutFileSum);
+           igniteData.writeToFileSumVolume(igniteData.getSumVolumeFromCache(), pathToOutFileSum);
 
-       igniteData.writeToFileAvgCharge(igniteData.getCountEntryFromCache(), pathToOutFileAvg);
-
-       igniteData.closeIgnite();
-
+           igniteData.writeToFileAvgCharge(igniteData.getCountEntryFromCache(), pathToOutFileAvg);
+       } finally {
+           igniteData.closeIgnite();
+       }
     }
 }
