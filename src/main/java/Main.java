@@ -1,6 +1,4 @@
 import Ignite.SuperTraher;
-import parser.ParserData;
-import parser.ParserFromFile;
 
 /**
  * Created by Андрей on 14.10.2017.
@@ -8,8 +6,6 @@ import parser.ParserFromFile;
 public class Main {
 
     public static void main(String[] args) throws Throwable{
-
-       // System.out.println("Hello Gradle!");
 
         SuperTraher.run(args[0], args[1], args[2]);
 
