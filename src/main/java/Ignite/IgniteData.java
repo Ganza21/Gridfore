@@ -17,6 +17,8 @@ import java.util.List;
  */
 public class IgniteData {
 
+    /* Не стал плодить одинаковый код и делать все sql запросы, если успею сделаю все выводы и добавлю вторую ноду */
+
 
     Ignite ignite;
     IgniteCache<Integer, CallDetail> callCache;
