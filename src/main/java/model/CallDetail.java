@@ -18,7 +18,7 @@ import java.util.List;
 @Getter
 @Setter
 @EqualsAndHashCode(of = {"number", "date", "tranz", "volume", "calledNum", "charge"})
-public class CallDetail implements Serializable{
+public class CallDetail implements Serializable {
     @QuerySqlField
     private String number;
     @QuerySqlField
@@ -31,7 +31,6 @@ public class CallDetail implements Serializable{
     private String calledNum;
     @QuerySqlField
     private BigDecimal charge;
-
     public static final DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 
     public CallDetail() {
@@ -39,18 +38,18 @@ public class CallDetail implements Serializable{
 
     /**
      * Constructor to convert a List to an object
+     *
      * @param data
      */
     public CallDetail(String data) {
         List<String> listData = Arrays.asList(data.split(","));
-        if (listData.size() == 6){
+        if (listData.size() == 6) {
             number = listData.get(0);
             date = LocalDate.parse(listData.get(1), FORMAT);
             tranz = Integer.valueOf(listData.get(2));
             volume = Integer.valueOf(listData.get(3));
             calledNum = listData.get(4);
             charge = new BigDecimal(listData.get(5));
-
         } else {
             System.out.println("Запись кривая");
         }

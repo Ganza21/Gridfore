@@ -5,10 +5,7 @@ import Ignite.SuperTraher;
  */
 public class Main {
 
-    public static void main(String[] args) throws Throwable{
-
+    public static void main(String[] args) throws Throwable {
         SuperTraher.run(args[0], args[1], args[2]);
-
     }
-
 }
