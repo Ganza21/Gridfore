@@ -14,15 +14,15 @@ public class SuperTraher {
      *
      * @param pathToFile
      * @param pathToOutFileSum
-     * @param pathToOutFileAvg
+     * @param pathToOutFileCount
      * @throws IOException
      */
-    public static void run(String pathToFile, String pathToOutFileSum, String pathToOutFileAvg) throws IOException {
+    public static void run(String pathToFile, String pathToOutFileSum, String pathToOutFileCount) throws IOException {
         IgniteData igniteData = new IgniteData();
         try {
             igniteData.putDataToCache(ParserData.splitDataToObject(ParserFromFile.getData(pathToFile)));
             igniteData.writeToFileSumVolume(igniteData.getSumVolumeFromCache(), pathToOutFileSum);
-            igniteData.writeToFileAvgCharge(igniteData.getCountEntryFromCache(), pathToOutFileAvg);
+            igniteData.writeToFileCountCharge(igniteData.getCountEntryFromCache(), pathToOutFileCount);
         } finally {
             igniteData.closeIgnite();
         }

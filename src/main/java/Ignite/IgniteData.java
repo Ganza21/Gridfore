@@ -83,7 +83,7 @@ public class IgniteData {
      * @param path1
      * @throws FileNotFoundException
      */
-    public void writeToFileAvgCharge(List<?> result, String path1) throws FileNotFoundException {
+    public void writeToFileCountCharge(List<?> result, String path1) throws FileNotFoundException {
         PrintWriter pw = new PrintWriter(new FileOutputStream(path1));
         result.forEach(pw::println);
         pw.close();
